@@ -6,9 +6,9 @@ import org.jboss.ejb3.annotation.Clustered;
 
 @Stateless
 @Clustered
-public class HelloStateless {
+public class ClusteredStatelessBeanImpl {
 
     public String hello() {
-        return "Greetings from " + System.getProperty("jboss.node.name");
+        return "Greetings from stateless bean deployed on node " + System.getProperty("jboss.node.name");
     }
 }
