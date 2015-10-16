@@ -16,7 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cenerino.exampleapp.ejb.ClusteredStatefulBean;
-import com.cenerino.exampleapp.ejb.ClusteredStatelessBeanImpl;
+import com.cenerino.exampleapp.ejb.ClusteredStatelessBean;
 
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
@@ -25,7 +25,7 @@ public class HelloServlet extends HttpServlet {
     private static final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
 
     @Inject
-    private ClusteredStatelessBeanImpl statelessBean;
+    private ClusteredStatelessBean statelessBean;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,9 +35,9 @@ public class HelloServlet extends HttpServlet {
     }
 
     private String getMessage(HttpServletRequest request) {
-        String bean = request.getParameter("bean");
+        String from = request.getParameter("from");
 
-        if (bean != null && bean.equals("stateful")) {
+        if (from != null && from.equals("stateful")) {
             ClusteredStatefulBean statefull = (ClusteredStatefulBean) request.getSession().getAttribute("stateful");
 
             if (statefull == null) {
@@ -45,7 +45,7 @@ public class HelloServlet extends HttpServlet {
 
                 try {
                     Context context = new InitialContext();
-                    statefull = (ClusteredStatefulBean) context.lookup("java:module/ClusteredStatefulBeanImpl");
+                    statefull = (ClusteredStatefulBean) context.lookup("java:module/ClusteredStatefulBean");
                     request.getSession().setAttribute("stateful", statefull);
                 } catch (NamingException e) {
                     throw new RuntimeException(e);
