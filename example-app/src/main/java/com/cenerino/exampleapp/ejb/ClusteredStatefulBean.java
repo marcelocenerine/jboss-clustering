@@ -16,7 +16,8 @@ public class ClusteredStatefulBean {
     private int counter;
 
     public String hello() {
-        logger.info("Counter now is -> {}", ++counter);
-        return "Greetings from stateful bean deployed on node " + System.getProperty("jboss.node.name");
+        String message = "Greetings from stateful bean deployed on node " + System.getProperty("jboss.node.name") + ". Counter -> " + counter++;
+        logger.info(message);
+        return message;
     }
 }
