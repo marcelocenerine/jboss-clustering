@@ -13,7 +13,7 @@ public class ClusteredStatelessBean {
     private static final Logger logger = LoggerFactory.getLogger(ClusteredStatelessBean.class);
 
     public String hello() {
-        String message = "Greetings from stateless bean deployed on node " + System.getProperty("jboss.node.name");
+        String message = "Greetings from stateless bean deployed on node '" + System.getProperty("jboss.node.name") + "'";
         logger.info(message);
         return message;
     }
