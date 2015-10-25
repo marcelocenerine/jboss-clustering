@@ -4,5 +4,5 @@
 	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	      version="3.0">
 
-  <distributable/> <!-- configures the JBoss AS to replicate the HTTP session -->
+  <distributable/> <!-- configures JBoss EAP to replicate HTTP sessions -->
 </web-app>
