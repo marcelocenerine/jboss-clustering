@@ -1,2 +1,2 @@
 # jboss-clustering
-Cluster-enabled 'hello world' JEE application (web/ejb) deployed on Docker containers running 2 jboss-eap servers + 1 httpd mod_cluster.
+Cluster-enabled 'hello world' application (web/ejb) deployed on jboss-eap servers + httpd mod_cluster using Docker containers.
