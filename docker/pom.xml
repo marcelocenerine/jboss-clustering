@@ -11,53 +11,10 @@
   <artifactId>docker</artifactId>
   <packaging>pom</packaging>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.10</version>
-        <executions>
-          <execution>
-            <id>copy</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <stripVersion>true</stripVersion>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>${project.groupId}</groupId>
-                  <artifactId>example-app</artifactId>
-                  <version>${project.version}</version>
-                  <type>war</type>
-                  <outputDirectory>${project.build.directory}/docker</outputDirectory>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.3.5</version>
-        <executions>
-          <execution>
-            <id>execution1</id>
-            <phase>package</phase>
-            <goals>
-              <goal>build</goal>
-            </goals>
-	        <configuration>
-	          <imageName>marcelocenerine/jboss-clustering:latest</imageName>
-	          <dockerDirectory>${basedir}/image</dockerDirectory>
-	        </configuration>
-	      </execution>
-	    </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <modules>
+    <module>jboss-eap</module>
+    <module>httpd-modcluster</module>
+    <module>haproxy</module>
+    <module>app</module>
+  </modules>
 </project>
