@@ -44,10 +44,19 @@
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.3.5</version>
-        <configuration>
-          <imageName>marcelocenerine/jboss-clustering:latest</imageName>
-          <dockerDirectory>${basedir}/image</dockerDirectory>
-        </configuration>
+        <executions>
+          <execution>
+            <id>execution1</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build</goal>
+            </goals>
+	        <configuration>
+	          <imageName>marcelocenerine/jboss-clustering:latest</imageName>
+	          <dockerDirectory>${basedir}/image</dockerDirectory>
+	        </configuration>
+	      </execution>
+	    </executions>
       </plugin>
     </plugins>
   </build>
