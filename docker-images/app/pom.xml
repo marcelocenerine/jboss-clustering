@@ -46,17 +46,17 @@
         <version>0.3.5</version>
         <executions>
           <execution>
-            <id>execution</id>
+            <id>build-image</id>
             <phase>package</phase>
             <goals>
               <goal>build</goal>
             </goals>
-	        <configuration>
-	          <imageName>marcelocenerine/jboss-clustering:latest</imageName>
-	          <dockerDirectory>${basedir}</dockerDirectory>
-	        </configuration>
-	      </execution>
-	    </executions>
+            <configuration>
+              <imageName>marcelocenerine/jboss-clustering:latest</imageName>
+              <dockerDirectory>${basedir}</dockerDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
