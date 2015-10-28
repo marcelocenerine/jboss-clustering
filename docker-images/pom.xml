@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>docker</artifactId>
+  <artifactId>docker-images</artifactId>
   <packaging>pom</packaging>
 
   <modules>

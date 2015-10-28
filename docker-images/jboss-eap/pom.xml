@@ -4,11 +4,11 @@
 
   <parent>
     <groupId>com.cenerino.jbossclustering</groupId>
-    <artifactId>docker</artifactId>
+    <artifactId>docker-images</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>httpd-modcluster</artifactId>
+  <artifactId>jboss-eap</artifactId>
   <packaging>pom</packaging>
 
   <build>
@@ -25,7 +25,7 @@
               <goal>build</goal>
             </goals>
 	          <configuration>
-	            <imageName>marcelocenerine/httpd-modcluster:latest</imageName>
+	            <imageName>marcelocenerine/jboss-eap:latest</imageName>
 	            <dockerDirectory>${basedir}</dockerDirectory>
 	          </configuration>
 	        </execution>

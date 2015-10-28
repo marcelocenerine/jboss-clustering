@@ -10,4 +10,5 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "/home/marcelo/dev/", "/vagrant/dev"
   config.vm.network :forwarded_port, guest: 80, host: 9980
   config.vm.network :forwarded_port, guest: 6666, host: 9966
+  config.vm.network :forwarded_port, guest: 1936, host: 9936
 end

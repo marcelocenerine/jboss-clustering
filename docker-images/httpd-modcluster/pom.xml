@@ -4,11 +4,11 @@
 
   <parent>
     <groupId>com.cenerino.jbossclustering</groupId>
-    <artifactId>docker</artifactId>
+    <artifactId>docker-images</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>haproxy</artifactId>
+  <artifactId>httpd-modcluster</artifactId>
   <packaging>pom</packaging>
 
   <build>
@@ -24,9 +24,9 @@
             <goals>
               <goal>build</goal>
             </goals>
-            <configuration>
-              <imageName>marcelocenerine/haproxy:latest</imageName>
-              <dockerDirectory>${basedir}</dockerDirectory>
+	          <configuration>
+	            <imageName>marcelocenerine/httpd-modcluster:latest</imageName>
+	            <dockerDirectory>${basedir}</dockerDirectory>
 	          </configuration>
 	        </execution>
 	      </executions>

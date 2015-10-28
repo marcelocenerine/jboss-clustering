@@ -1,0 +1,13 @@
+node1:
+  image: marcelocenerine/jboss-clustering:latest
+node2:
+  image: marcelocenerine/jboss-clustering:latest
+haproxy:
+  image: marcelocenerine/haproxy:latest
+  ports:
+    - 80:80
+    - 1936:1936
+  links:
+    - node1:node1
+    - node2:node2
+

@@ -4,7 +4,7 @@
 
   <parent>
     <groupId>com.cenerino.jbossclustering</groupId>
-    <artifactId>docker</artifactId>
+    <artifactId>docker-images</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
