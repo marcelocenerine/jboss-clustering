@@ -11,6 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,5 +42,12 @@ public class JSessionIdLogger implements Filter {
         }
 
         chain.doFilter(request, response);
+
+        HttpServletResponse servletResponse = (HttpServletResponse) response;
+        String header = servletResponse.getHeader("Set-Cookie");
+
+        if (header != null && header.startsWith("JSESSIONID")) {
+            logger.info("Creating new JSESSIONID cookie '{}'", header);
+        }
     }
 }
