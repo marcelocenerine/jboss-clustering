@@ -8,9 +8,9 @@ import org.slf4j.LoggerFactory;
 
 @Stateless
 @Clustered
-public class ClusteredStatelessBean {
+public class ClusteredStatelessBeanImpl implements ClusteredStatelessBean, ClusteredStatelessBeanRemote {
 
-    private static final Logger logger = LoggerFactory.getLogger(ClusteredStatelessBean.class);
+    private static final Logger logger = LoggerFactory.getLogger(ClusteredStatelessBeanImpl.class);
 
     public String hello() {
         String message = "Greetings from stateless bean deployed on node '" + System.getProperty("jboss.node.name") + "'";

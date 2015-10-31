@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>app</artifactId>
+  <artifactId>web-app</artifactId>
   <packaging>pom</packaging>
 
   <build>
@@ -29,7 +29,7 @@
               <artifactItems>
                 <artifactItem>
                   <groupId>${project.groupId}</groupId>
-                  <artifactId>example-app</artifactId>
+                  <artifactId>example-app-web</artifactId>
                   <version>${project.version}</version>
                   <type>war</type>
                   <outputDirectory>${project.build.directory}/docker</outputDirectory>

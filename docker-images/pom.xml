@@ -19,6 +19,6 @@
     <module>jboss-eap</module>
     <module>httpd-modcluster</module>
     <module>haproxy</module>
-    <module>app</module>
+    <module>web-app</module>
   </modules>
 </project>
