@@ -11,6 +11,10 @@
   <artifactId>docker-images</artifactId>
   <packaging>pom</packaging>
 
+  <properties>
+    <maven.install.skip>true</maven.install.skip>
+  </properties>
+
   <modules>
     <module>jboss-eap</module>
     <module>httpd-modcluster</module>

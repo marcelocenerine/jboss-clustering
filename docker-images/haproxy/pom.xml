@@ -26,7 +26,7 @@
             </goals>
             <configuration>
               <imageName>marcelocenerine/haproxy:latest</imageName>
-              <dockerDirectory>${basedir}</dockerDirectory>
+              <dockerDirectory>${basedir}/src/main/resources</dockerDirectory>
             </configuration>
           </execution>
         </executions>

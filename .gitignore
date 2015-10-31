@@ -5,3 +5,5 @@ target/
 bin/
 .vagrant
 *.zip
+*.iml
+.idea/
