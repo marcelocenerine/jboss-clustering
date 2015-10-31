@@ -2,6 +2,8 @@ node1:
   image: marcelocenerine/jboss-clustering:latest
 node2:
   image: marcelocenerine/jboss-clustering:latest
+node3:
+  image: marcelocenerine/jboss-clustering:latest
 httpd:
   image: marcelocenerine/httpd-modcluster:latest
   ports:
