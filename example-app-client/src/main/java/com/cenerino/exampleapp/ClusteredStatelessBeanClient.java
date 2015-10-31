@@ -16,14 +16,17 @@ public class ClusteredStatelessBeanClient {
     public static void main(String[] args) throws NamingException {
         System.out.println("Running clustered stateless bean client. Press 'CTRL+C' to stop\n");
 
-        Properties prop = new Properties();
-        prop.put(URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
-        Context context = new InitialContext(prop);
-        ClusteredStatelessBeanRemote statelessBean = (ClusteredStatelessBeanRemote) context.lookup(JNDI);
+        Context context = new InitialContext();
 
-        while (true) {
-            System.out.println(statelessBean.hello());
-            doWait(1000);
+        try {
+            ClusteredStatelessBeanRemote statelessBean = (ClusteredStatelessBeanRemote) context.lookup(JNDI);
+
+            while (true) {
+                System.out.println(statelessBean.hello());
+                doWait(1000);
+            }
+        } finally {
+            context.close();
         }
     }
 
