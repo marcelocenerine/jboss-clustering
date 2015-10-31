@@ -1,9 +1,15 @@
 node1:
   image: marcelocenerine/jboss-clustering:latest
+  ports:
+    - 4447:4447
 node2:
   image: marcelocenerine/jboss-clustering:latest
+  ports:
+    - 4547:4447
 node3:
   image: marcelocenerine/jboss-clustering:latest
+  ports:
+    - 4647:4447
 haproxy:
   image: marcelocenerine/haproxy:latest
   ports:

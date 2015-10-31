@@ -10,6 +10,9 @@ RUN unzip /tmp/jboss-eap-6.4.0.zip -d /opt/jboss && rm -rf /tmp/jboss-eap-*.zip
 # Add admin user
 RUN $JBOSS_HOME/bin/add-user.sh admin admin123$ --silent
 
+# Add application user (remote EJB calls)
+RUN $JBOSS_HOME/bin/add-user.sh -a appclient client123$ --silent
+
 # Expose ports
 EXPOSE 8080 8443 9990 9999 8009 9443 4447
 
