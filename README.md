@@ -20,8 +20,11 @@ mod_cluster_manager:
 haproxy stats:
 - http://localhost:9936/
 
+Standalone clients:
+- java -cp example-app-client-0.0.1-SNAPSHOT.jar com.cenerino.exampleapp.ClusteredStatelessBeanClient
+- java -cp example-app-client-0.0.1-SNAPSHOT.jar com.cenerino.exampleapp.ClusteredStatefulBeanClient
+
 
 # TODOs:
-- HAproxy doesn't stick with a new server when there is a failover. If option "redispatch" is used then a new JSESSIONID is created and the former session gets lost;
-- HAproxy doesn't set the status of server that crashed and came up again with a different IP (Docker updates /etc/hosts correctly);
-get updated with the new IP, hence the HAproxy thinks the server is still dead;
+- HAproxy doesn't stick with a new server when there is a failover. If option "redispatch" is used then a new JSESSIONID is created and the original session gets lost;
+- HAproxy doesn't set the status of server that crashed and came up again to UP;
