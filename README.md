@@ -25,6 +25,6 @@ Standalone clients:
 - java -cp example-app-client-0.0.1-SNAPSHOT.jar com.cenerino.exampleapp.ClusteredStatefulBeanClient
 
 
-# TODOs:
+### TODOs:
 - HAproxy doesn't stick with a new server when there is a failover. If option "redispatch" is used then a new JSESSIONID is created and the original session gets lost;
 - HAproxy doesn't set the status of server that crashed and came up again to UP;
