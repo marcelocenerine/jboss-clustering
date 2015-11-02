@@ -1,6 +1,5 @@
 # jboss-clustering
-Cluster-enabled 'hello world' application (web/ejb) deployed on multiple jboss-eap servers. There are two setups using different load balancers: httpd + mod_cluster and the other
-HAProxy. Everything runs within Docker containers.
+Cluster-enabled 'hello world' application (web/ejb) deployed on multiple jboss-eap servers. There are two setups using different load balancers: httpd + mod_cluster and HAProxy. Everything runs within Docker containers.
 
 Steps:
 
@@ -26,5 +25,5 @@ Standalone clients:
 
 
 ### TODOs:
-- HAproxy doesn't stick with a new server when there is a failover. If option "redispatch" is used then a new JSESSIONID is created and the original session gets lost;
-- HAproxy doesn't set the status of server that crashed and came up again to UP;
+- HAproxy is not sticking with a new server when there is a failover. If option "redispatch" is used then a new JSESSIONID is created and the original session gets lost;
+- HAproxy is not updating the status of a server that crashed and came up again (it remains DOWN);
